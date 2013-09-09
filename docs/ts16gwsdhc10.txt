@@ -1,0 +1,21 @@
+# cat /proc/cpuinfo 
+Processor       : ARM926EJ-S rev 5 (v5l)
+BogoMIPS        : 421.06
+Features        : swp half fastmult edsp java 
+CPU implementer : 0x41
+CPU architecture: 5TEJ
+CPU variant     : 0x0
+CPU part        : 0x926
+CPU revision    : 5
+
+Hardware        : KeyASIC Ka2000 EVM
+Revision        : 0000
+Serial          : 0000000000000000
+
+
+# free
+             total         used         free       shared      buffers
+Mem:         29824        19616        10208            0          108
+-/+ buffers:              19508        10316
+Swap:            0            0            0
+
