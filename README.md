@@ -1,7 +1,9 @@
 DTN on Wi-Fi SD card
 =========================================
 
-This repository contains scripts and configuration files to turn a Wi-Fi SD card into a DTN node.
+This repository contains scripts and configuration files to turn a Wi-Fi SD card into a DTN node. This is the list of tested cards.
+
+ * Transcend Wi-Fi SDHC card 16 GB (TS16GWSDHC10)
 
 # Update binaries
 
