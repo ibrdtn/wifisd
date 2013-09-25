@@ -1,0 +1,6 @@
+config BR2_PACKAGE_WIFISD_LEGACY
+	bool "wifisd-legacy"
+	help
+	  Legacy Drivers for WiFi SD Card
+
+	  http://de.transcend-info.com/support/dlcenter/dllogin_t.asp?Link=dlcenter|Driver|WiFiSD_v1.8.zip
