@@ -8,8 +8,9 @@ BUILDROOT_DL="http://buildroot.uclibc.org/downloads"
 BUILDROOT_FILE="${WORKSPACE}/dl/buildroot-${BUILDROOT_VERSION}.tar.bz2"
 BUILDROOT_DIR="${WORKSPACE}/build/buildroot-${BUILDROOT_VERSION}"
 
-FIRMWARE_FILE="WiFiSD_v1.8.zip"
-FIRMWARE_URL="http://de.transcend-info.com/support/dlcenter/dllogin_t.asp?Link=dlcenter|Driver|WiFiSD_v1.8.zip"
+FIRMWARE_VERSION="1.8"
+FIRMWARE_FILE="WiFiSD_v${FIRMWARE_VERSION}.zip"
+FIRMWARE_URL="http://de.transcend-info.com/support/dlcenter/dllogin_t.asp?Link=dlcenter|Driver|WiFiSD_v${FIRMWARE_VERSION}.zip"
 
 mkdir -p dl
 mkdir -p build
@@ -61,14 +62,18 @@ if [ ! -d "${WORKSPACE}/build/root.orig" ]; then
 fi
 
 # copy legacy stuff to legacy buildroot package
-if [ ! -d "${WORKSPACE}/package/wifisd-legacy/lib" ]; then
-    mkdir -p ${WORKSPACE}/package/wifisd-legacy/lib
+if [ ! -d "${WORKSPACE}/dl/wifisd-legacy-${FIRMWARE_VERSION}.tar.gz" ]; then
+    mkdir -p ${WORKSPACE}/wifisd-legacy-${FIRMWARE_VERSION}
     MODULES="ar6000.ko gpio_i2c.ko ka2000-sdhc.ko ka2000-sdio.ko"
 
     for MOD in ${MODULES}; do
-        cp -v ${WORKSPACE}/build/root.orig/lib/${MOD} ${WORKSPACE}/package/wifisd-legacy/lib
+        cp -v ${WORKSPACE}/build/root.orig/lib/${MOD} ${WORKSPACE}/wifisd-legacy-${FIRMWARE_VERSION}
     done
-    cp -rv ${WORKSPACE}/build/root.orig/lib/ath6k ${WORKSPACE}/package/wifisd-legacy/lib
+    cp -rv ${WORKSPACE}/build/root.orig/lib/ath6k ${WORKSPACE}/wifisd-legacy-${FIRMWARE_VERSION}
+    tar -C ${WORKSPACE} -czf ${WORKSPACE}/dl/wifisd-legacy-${FIRMWARE_VERSION}.tar.gz wifisd-legacy-${FIRMWARE_VERSION}
+    mkdir -p ${BUILDROOT_DIR}/dl
+    rm -f ${BUILDROOT_DIR}/dl/wifisd-legacy-${FIRMWARE_VERSION}.tar.gz
+    ln -s ${WORKSPACE}/dl/wifisd-legacy-${FIRMWARE_VERSION}.tar.gz ${BUILDROOT_DIR}/dl
 fi
 
 # build
