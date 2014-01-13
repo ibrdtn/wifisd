@@ -52,7 +52,7 @@ $ cp -rv sd/* mnt-sd/
 $ umount mnt-sd
 ```
 ```
-$ mkdir mnt-sd
+$ mkdir mnt-sd-ext
 $ mount /dev/mmcblk0p2 mnt-sd-ext
 $ cp -rv sd-ext/* mnt-sd-ext/
 $ umount mnt-sd-ext
