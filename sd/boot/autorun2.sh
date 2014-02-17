@@ -32,14 +32,13 @@ EOF
 	exit 0
 fi
 
-# remount sd-card read-only
+# unmount sd-card
 RET=1
 while [ ${RET} != 0 ]; do
 	sleep 1
 	umount /mnt/sd
 	RET=$?
 done
-mount -t vfat -o shortname=winnt,iocharset=utf8,ro /dev/mmcblk0p1 /mnt/sd
 
 # disable kcard_app
 /usr/bin/kcard_app.sh stop
@@ -59,6 +58,13 @@ rcS6
 if [ -x "${EXT_PATH}/sbin/dtnd" ]; then
 	${EXT_PATH}/sbin/dtnd -i mlan0 -c ${EXT_PATH}/etc/dtnd.conf &
 fi
+
+sleep 1 #wait for daemon
+
+# Start IBR-DTN outbox
+#if [ -x "${EXT_PATH}/bin/dtnoutbox" ]; then
+	#${EXT_PATH}/bin/dtnoutbox ${EXT_PATH}/etc/dtnoutbox.conf &
+#fi
 
 echo "autorun2.sh finished" >> /tmp/log.rcS
 
