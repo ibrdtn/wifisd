@@ -2,11 +2,11 @@
 #
 
 # nightlies
-JENKINS_URL="http://jenkins.ibr.cs.tu-bs.de/jenkins/job/buildroot-ibrdtn-static/defconfig=ka_wifisd_defconfig,label=buildroot-build/lastSuccessfulBuild/artifact/output/target"
-JENKINS_URL="http://jenkins.ibr.cs.tu-bs.de/jenkins/job/buildroot-ibrdtn-static/defconfig=buffalo_lsgl_defconfig,label=buildroot-build/lastSuccessfulBuild/artifact/output/target"
+#JENKINS_URL="http://jenkins.ibr.cs.tu-bs.de/jenkins/job/buildroot-ibrdtn-static/defconfig=ka_wifisd_defconfig,label=buildroot-build/lastSuccessfulBuild/artifact/output/target"
+#JENKINS_URL="http://jenkins.ibr.cs.tu-bs.de/jenkins/job/buildroot-ibrdtn-static/defconfig=buffalo_lsgl_defconfig,label=buildroot-build/lastSuccessfulBuild/artifact/output/target"
 
 # stable
-#JENKINS_URL="http://jenkins.ibr.cs.tu-bs.de/jenkins/job/ibrdtn-release-buildroot/defconfig=ibrdtn_arm_defconfig,label=moped/lastSuccessfulBuild/artifact/output/target"
+JENKINS_URL="http://jenkins.ibr.cs.tu-bs.de/jenkins/job/ibrdtn-release-buildroot/defconfig=ibrdtn_arm_defconfig,label=moped/lastSuccessfulBuild/artifact/output/target"
 
 mkdir -p ./sd-ext/sbin
 mkdir -p ./sd-ext/bin
