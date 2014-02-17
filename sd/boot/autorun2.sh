@@ -56,15 +56,15 @@ rcS6
 
 # Start IBR-DTN
 if [ -x "${EXT_PATH}/sbin/dtnd" ]; then
-	${EXT_PATH}/sbin/dtnd -i mlan0 -c ${EXT_PATH}/etc/dtnd.conf &
+	${EXT_PATH}/sbin/dtnd -i mlan0 ${EXT_PATH}/etc/dtnd.conf &
 fi
 
 sleep 1 #wait for daemon
 
 # Start IBR-DTN outbox
-#if [ -x "${EXT_PATH}/bin/dtnoutbox" ]; then
-	#${EXT_PATH}/bin/dtnoutbox ${EXT_PATH}/etc/dtnoutbox.conf &
-#fi
+if [ -x "${EXT_PATH}/bin/dtnoutbox" ]; then
+	${EXT_PATH}/bin/dtnoutbox ${EXT_PATH}/etc/dtnoutbox.conf &
+fi
 
 echo "autorun2.sh finished" >> /tmp/log.rcS
 
