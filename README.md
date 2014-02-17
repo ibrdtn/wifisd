@@ -60,3 +60,13 @@ $ umount mnt-sd-ext
 
 Installation is done now. Reboot the sd-card by ejecting and inserting it again into the card reader. The system should boot-up and open a Ad-Hoc Wi-Fi.
 
+# Configuration
+
+If you want to use dtnoutbox, e.g. for transferring images from your camera to another dtn-node, see the file:
+
+```
+sd-ext/dtnoutbox.conf
+```
+
+Simply uncomment and adapt the first three parameters as desired. If necessary adjust the optional parameters, too. For a short help, have a look at the dtnoutbox tool.
+
