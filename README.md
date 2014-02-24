@@ -68,5 +68,5 @@ If you want to use dtnoutbox, e.g. for transferring images from your camera to a
 sd-ext/dtnoutbox.conf
 ```
 
-Simply uncomment and adapt the first three parameters as desired. If necessary adjust the optional parameters, too. For a short help, have a look at the dtnoutbox tool.
+Simply uncomment the first line to enable dtnoutbox and adapt the other parameters as desired. If necessary adjust the optional parameters, too. For a short help, have a look at the dtnoutbox tool.
 
