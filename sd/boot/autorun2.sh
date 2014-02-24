@@ -32,13 +32,14 @@ EOF
 	exit 0
 fi
 
-# unmount sd-card
+# remount sd-card read-only
 RET=1
 while [ ${RET} != 0 ]; do
 	sleep 1
 	umount /mnt/sd
 	RET=$?
 done
+mount -t vfat -o shortname=winnt,iocharset=utf8,ro /dev/mmcblk0p1 /mnt/sd
 
 # disable kcard_app
 /usr/bin/kcard_app.sh stop
