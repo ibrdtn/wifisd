@@ -65,8 +65,8 @@ Installation is done now. Reboot the sd-card by ejecting and inserting it again 
 If you want to use dtnoutbox, e.g. for transferring images from your camera to another dtn-node, see the file:
 
 ```
-sd-ext/dtnoutbox.conf
+sd-ext/etc/dtnoutbox.conf
 ```
 
-Simply uncomment the first line to enable dtnoutbox and adapt the other parameters as desired. If necessary adjust the optional parameters, too. For a short help, have a look at the dtnoutbox tool.
+Simply uncomment the second line to enable dtnoutbox and adapt the other parameters as desired. If necessary adjust the optional parameters, too. For a short help, have a look at the dtnoutbox tool.
 

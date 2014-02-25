@@ -6,6 +6,7 @@ EXT_PATH=/mnt/sd-ext
 if [ "${1}" == "install" ]; then
 	# prepare permissions for later execution
 	chmod 755 ${BOOT_PATH}/start_adhoc.sh
+	chmod 755 ${BOOT_PATH}/start_dtnoutbox.sh
 
 	# replace bodyguard script
 	cp ${BOOT_PATH}/autorun2.sh /usr/bin/bodyguard.sh
@@ -64,7 +65,7 @@ sleep 1 #wait for daemon
 
 # Start IBR-DTN outbox
 if [ -x "${EXT_PATH}/bin/dtnoutbox" ]; then
-	${EXT_PATH}/bin/dtnoutbox ${EXT_PATH}/etc/dtnoutbox.conf &
+	${BOOT_PATH}/start_dtnoutbox.sh
 fi
 
 echo "autorun2.sh finished" >> /tmp/log.rcS
