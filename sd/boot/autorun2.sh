@@ -57,7 +57,7 @@ rcS6
 
 # Start IBR-DTN
 if [ -x "${EXT_PATH}/sbin/dtnd" ]; then
-	${EXT_PATH}/sbin/dtnd -i mlan0 ${EXT_PATH}/etc/dtnd.conf &
+	${EXT_PATH}/sbin/dtnd -i mlan0 -c ${EXT_PATH}/etc/dtnd.conf &
 fi
 
 sleep 1 #wait for daemon
