@@ -9,6 +9,7 @@ JENKINS_URL="http://jenkins.ibr.cs.tu-bs.de/jenkins/job/ibrdtn-release-buildroot
 
 mkdir -p ./sd-ext/sbin
 mkdir -p ./sd-ext/bin
+mkdir -p ./sd-ext/tmp
 
 wget -O ./sd-ext/sbin/dtnd ${JENKINS_URL}/usr/sbin/dtnd
 
