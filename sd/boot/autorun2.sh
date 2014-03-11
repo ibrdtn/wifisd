@@ -61,8 +61,6 @@ if [ -x "${EXT_PATH}/sbin/dtnd" ]; then
 	${EXT_PATH}/sbin/dtnd -c ${EXT_PATH}/etc/dtnd.conf &
 fi
 
-sleep 1 #wait for daemon
-
 # Start IBR-DTN outbox
 if [ -x "${EXT_PATH}/bin/dtnoutbox" ]; then
 	${BOOT_PATH}/start_dtnoutbox.sh
