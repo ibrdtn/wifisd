@@ -22,6 +22,9 @@ wpa_supplicant -imlan0 -Dwext -c/mnt/sd-ext/etc/wpa-adhoc.conf &
 # wait some time until wpa_supplicant has finished its work
 sleep 5
 
+# set power-management to a more reliable mode
+/bin/wmiconfig -i mlan0 --power maxperf
+
 # configure ad-hoc ip
 zcip -f -q mlan0 /mnt/sd-ext/etc/zcip.script
 
